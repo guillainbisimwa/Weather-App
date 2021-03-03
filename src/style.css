@@ -14,3 +14,21 @@
 .hide {
   display: none;
 }
+
+.bg {
+  background: url(./img/1.png);
+  height: 300px;
+}
+
+#tempSwitch {
+  width: 4em;
+  height: 2em;
+}
+
+.form-control-sm {
+  height: fit-content !important;
+}
+
+.temp {
+  width: 80px;
+}
