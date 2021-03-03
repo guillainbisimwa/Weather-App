@@ -15,9 +15,14 @@
   display: none;
 }
 
-.bg {
-  background: url(./img/1.png);
-  height: 300px;
+body {
+  background-size: cover;
+  background: url(./img/1.png) center;
+}
+
+.body {
+  background: #100f107a;
+  max-height: 100rem;
 }
 
 #tempSwitch {
@@ -31,4 +36,8 @@
 
 .temp {
   width: 80px;
+}
+
+.mt-8 {
+  margin-top: 10rem !important;
 }
