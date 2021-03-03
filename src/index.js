@@ -1,14 +1,17 @@
 import './style.css';
 import weather from './scripts/weather';
+import header from './scripts/header';
+import main from './scripts/main_render';
 
 const content = document.querySelector('#content');
-content.className = 'container';
 
 const mainPage = document.createElement('div');
+mainPage.className = 'container pb-5';
+
 content.appendChild(mainPage);
 
-const consthomePage = () => {
-  mainPage.appendChild(weather());
+const homePage = () => {
+  mainPage.append(header(), main());
 };
 
-consthomePage();
+homePage();

@@ -1,9 +1,6 @@
 import setAttributes from './setAttributes';
 
 const header = () => {
-  // const container = document.createElement('div');
-  // container.className = 'container pb-5';
-
   const header = document.createElement('header');
   header.className = 'd-flex justify-content-between pt-5';
 
@@ -34,6 +31,7 @@ const header = () => {
   searchWrapper.append(searchInput, tempWrapper);
 
   header.append(logoWrapper, searchWrapper);
+  return header;
 };
 
 export default header;
