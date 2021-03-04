@@ -64,7 +64,6 @@ const main = () => {
   cityContainer.className = 'text-light pb-2';
 
   const city = document.createElement('span');
-  city.textContent = 'Goma,';
   setAttributes(city, {
     id: 'city',
   });
