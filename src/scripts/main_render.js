@@ -40,20 +40,27 @@ const main = () => {
   showTempWrapper.className = 'showTemp mt-8 pt-5';
 
   const showTemp = document.createElement('div');
-  showTemp.className = 'd-flex gap-3 pt-5';
+  showTemp.className = 'd-flex gap-3 pt-5 align-items-center';
 
   const textTemp = document.createElement('p');
-  textTemp.className = 'h4 fw-light text-light opacity-70 line-height-base';
+  textTemp.className = 'h4 fw-light text-light opacity-70 line-height-base text-capitalize';
   textTemp.textContent = 'Cloud rain';
   setAttributes(textTemp, {
     id: 'text-temp',
   });
 
-  const iconTemp = document.createElement('i');
-  iconTemp.className = 'fas fa-cloud-rain fs-1 text-light';
+  const iconTemp = document.createElement('div');
+  iconTemp.className = 'icon rainy';
   setAttributes(iconTemp, {
-    id: 'icon-temp',
+    id: 'weather',
   });
+
+  const iconCloud = document.createElement('div');
+  iconCloud.className = 'cloud';
+  const iconRain = document.createElement('div');
+  iconRain.className = 'rain';
+
+  iconTemp.append(iconCloud, iconRain);
 
   showTemp.append(textTemp, iconTemp);
 
@@ -64,7 +71,7 @@ const main = () => {
   cityContainer.className = 'text-light pb-2';
 
   const city = document.createElement('span');
-  city.textContent = 'Goma';
+  city.textContent = 'Goma,';
   setAttributes(city, {
     id: 'city',
   });
