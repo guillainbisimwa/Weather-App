@@ -25,7 +25,7 @@ const main = () => {
   });
   day.textContent = 'Monday';
 
-  const date = document.createElement('span');
+  const date = document.createElement('p');
   setAttributes(date, {
     id: 'date',
   });
@@ -100,7 +100,18 @@ const main = () => {
 
   const rightCard = document.createElement('div');
   rightCard.className = 'card';
-  rightCard.innerHTML = 'p';
+  rightCard.innerHTML = 'pressure';
+  // "pressure"
+  // "humidity"
+  // "temp_min"
+  // "temp_max"
+  //   <div class="d-grid gap-3">
+  //   <div class="p-2 bg-light border">Grid item 1</div>
+  //   <div class="p-2 bg-light border">Grid item 2</div>
+  //   <div class="p-2 bg-light border">Grid item 3</div>
+  // </div>
+
+  colRightWrapper.appendChild(rightCard);
 
   main.append(colLeftWrapper, colRightWrapper);
   return main;
