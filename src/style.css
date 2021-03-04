@@ -29,7 +29,7 @@ body {
 }
 
 .body {
-  background: hsla(300, 3%, 6%, 0.478);
+  background: hsl(300deg 3% 6% / 72%);
   max-height: 100rem;
   height: 100%;
 }

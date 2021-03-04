@@ -95,20 +95,53 @@ const main = () => {
   colLeftWrapper.appendChild(colLeft);
 
   const colRightWrapper = document.createElement('div');
-  colRightWrapper.className = 'details col-sm-4 mt-3 py-3';
+  colRightWrapper.className = 'details col-sm-4 mt-3 py-3 d-flex align-items-center';
 
   const rightCard = document.createElement('div');
-  rightCard.className = 'card';
-  rightCard.innerHTML = 'pressure';
-  // "pressure"
-  // "humidity"
-  // "temp_min"
-  // "temp_max"
-  //   <div class="d-grid gap-3">
-  //   <div class="p-2 bg-light border">Grid item 1</div>
-  //   <div class="p-2 bg-light border">Grid item 2</div>
-  //   <div class="p-2 bg-light border">Grid item 3</div>
-  // </div>
+  rightCard.className = 'card shadow';
+
+  const detailsWrapper = document.createElement('div');
+  detailsWrapper.className = 'row text-center';
+
+  const pressure = document.createElement('div');
+  pressure.className = 'col-sm-6 mt-2';
+  const humidity = document.createElement('div');
+  humidity.className = 'col-sm-6 mt-2';
+  const tempMin = document.createElement('div');
+  tempMin.className = 'col-sm-6 mt-2';
+  const tempMax = document.createElement('div');
+  tempMax.className = 'col-sm-6 mt-2';
+
+  const pressureNbr = document.createElement('p');
+  pressureNbr.className = 'badge rounded-pill bg-secondary swadow fw-bold pressureNbr';
+  const humidityNbr = document.createElement('p');
+  humidityNbr.className = 'badge rounded-pill bg-secondary swadow fw-bold humidityNbr';
+  const tempMinNbr = document.createElement('p');
+  tempMinNbr.className = 'badge rounded-pill bg-secondary swadow fw-bold tempMinNbr';
+  const tempMaxNbr = document.createElement('p');
+  tempMaxNbr.className = 'badge rounded-pill bg-secondary swadow fw-bold tempMaxNbr';
+
+  const pressureTxt = document.createElement('p');
+  pressureTxt.className = 'fs-5';
+  pressureTxt.textContent = 'PRESSURE';
+  const humidityTxt = document.createElement('p');
+  humidityTxt.className = 'fs-5';
+  humidityTxt.textContent = 'HUMIDITY';
+  const tempMinTxt = document.createElement('p');
+  tempMinTxt.className = 'fs-5';
+  tempMinTxt.textContent = 'TEMP MIN';
+  const tempMaxTxt = document.createElement('p');
+  tempMaxTxt.className = 'fs-5';
+  tempMaxTxt.textContent = 'TEMP MAX';
+
+  pressure.append(pressureNbr, pressureTxt);
+  humidity.append(humidityNbr, humidityTxt);
+  tempMin.append(tempMinNbr, tempMinTxt);
+  tempMax.append(tempMaxNbr, tempMaxTxt);
+
+  detailsWrapper.append(pressure, humidity, tempMin, tempMax);
+
+  rightCard.appendChild(detailsWrapper);
 
   colRightWrapper.appendChild(rightCard);
 

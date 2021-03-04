@@ -3,6 +3,7 @@ import header from './scripts/header';
 import main from './scripts/main_render';
 import weatherApi from './scripts/weatherApi';
 import displayWeather from './scripts/weatherRender';
+import tempConverted from './scripts/tempConver';
 
 const content = document.querySelector('#content');
 content.className = 'body';
@@ -32,12 +33,10 @@ check.addEventListener('change', function () {
   const degree = document.querySelector('#degree');
   const degreeNbr = document.querySelector('#degree-nbr');
   if (this.checked) {
-    const temp = Math.round(((parseInt(degreeNbr.textContent, 10) * 9) / 5) + 32);
-    degreeNbr.textContent = temp;
+    degreeNbr.textContent = tempConverted(parseInt(degreeNbr.textContent, 10), 'F');
     degree.textContent = '°F';
   } else {
-    const temp = Math.round(((parseInt(degreeNbr.textContent, 10) - 32) * (5 / 9)));
-    degreeNbr.textContent = temp;
+    degreeNbr.textContent = tempConverted(parseInt(degreeNbr.textContent, 10), 'C');
     degree.textContent = '°C';
   }
 });

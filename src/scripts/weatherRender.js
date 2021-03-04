@@ -154,6 +154,17 @@ const displayDate = () => {
   date.textContent = `${mm} ${dateWeek}, ${yyyy}`;
 };
 
+const displayDetails = (weather) => {
+  const pressureNbr = document.querySelector('.pressureNbr');
+  pressureNbr.textContent = weather.pressure;
+  const humidityNbr = document.querySelector('.humidityNbr');
+  humidityNbr.textContent = weather.humidity;
+  const tempMinNbr = document.querySelector('.tempMinNbr');
+  tempMinNbr.textContent = `${weather.temp_min} °C`;
+  const tempMaxNbr = document.querySelector('.tempMaxNbr');
+  tempMaxNbr.textContent = `${weather.temp_max} °C`;
+};
+
 const displayWeather = (weather) => {
   const textTemp = document.querySelector('#text-temp');
   textTemp.textContent = weather.weather[0].description;
@@ -169,6 +180,7 @@ const displayWeather = (weather) => {
   changeBackground(weather.weather[0].main);
   changeIcon(weather.weather[0].main);
   displayDate();
+  displayDetails(weather.main);
 };
 
 export default displayWeather;
