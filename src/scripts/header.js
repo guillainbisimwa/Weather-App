@@ -24,7 +24,7 @@ const header = () => {
 
   const tempSwitch = document.createElement('input');
   setAttributes(tempSwitch, {
-    class: 'form-check-input shadow', id: 'tempSwitch', type: 'checkbox',
+    class: 'form-check-input shadow', id: 'tempSwitch', name: 'checkbox', type: 'checkbox', vaule: '',
   });
   const tempConnversion = document.createElement('h5');
   tempConnversion.className = 'd-flex temp mx-2 mt-2 text-light';

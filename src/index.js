@@ -18,10 +18,27 @@ const homePage = () => {
 
 homePage();
 
-const defaultCountry = 'Goma';
-function getWeather(query) {
+const defaultCountry = 'Moscow';
+const getWeather = (query) => {
   fetch(`${weatherApi.base}weather?q=${query}&units=metric&APPID=${weatherApi.key}`)
     .then(weather => weather.json()).then(displayWeather);
-}
+};
 
 getWeather(defaultCountry);
+const check = document.querySelector('#tempSwitch');
+
+// eslint-disable-next-line func-names
+check.addEventListener('change', function () {
+  const degree = document.querySelector('#degree');
+  const degreeNbr = document.querySelector('#degree-nbr');
+  console.log(degreeNbr.textContent);
+  if (this.checked) {
+    const temp = Math.round(((parseInt(degreeNbr.textContent, 10) * 9) / 5) + 32);
+    degreeNbr.textContent = temp;
+    degree.textContent = '°F';
+  } else {
+    const temp = Math.round(((parseInt(degreeNbr.textContent, 10) - 32) * (5 / 9)));
+    degreeNbr.textContent = temp;
+    degree.textContent = '°C';
+  }
+});
