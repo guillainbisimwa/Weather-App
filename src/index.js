@@ -31,7 +31,6 @@ const check = document.querySelector('#tempSwitch');
 check.addEventListener('change', function () {
   const degree = document.querySelector('#degree');
   const degreeNbr = document.querySelector('#degree-nbr');
-  console.log(degreeNbr.textContent);
   if (this.checked) {
     const temp = Math.round(((parseInt(degreeNbr.textContent, 10) * 9) / 5) + 32);
     degreeNbr.textContent = temp;
@@ -42,3 +41,13 @@ check.addEventListener('change', function () {
     degree.textContent = '°C';
   }
 });
+
+const search = document.querySelector('#search-input');
+
+const found = (event) => {
+  if (event.keyCode === 13) {
+    getWeather(search.value);
+  }
+};
+
+search.addEventListener('keypress', found);
