@@ -108,7 +108,7 @@ const changeBackground = (weather) => {
   switch (weather) {
     case 'Rain': {
       body.removeAttribute('class');
-      body.classList.add('rainy');
+      body.classList.add('rainyBg');
       break;
     }
     case 'Sun': {
@@ -132,6 +132,28 @@ const changeBackground = (weather) => {
   }
 };
 
+const displayDate = () => {
+  const today = new Date();
+
+  const months = ['January', 'February', 'March',
+    'April', 'May', 'June', 'July',
+    'August', 'September', 'October',
+    'November', 'December'];
+
+  const days = ['Monday', 'Tuesday', 'Wednesday',
+    'Thursday', 'Friday', 'Saturday', 'Sunday'];
+
+  const dd = days[today.getDay()];
+  const dateWeek = today.getDate();
+  const mm = months[today.getMonth()];
+  const yyyy = today.getFullYear();
+
+  const day = document.querySelector('#day');
+  day.textContent = dd;
+  const date = document.querySelector('#date');
+  date.textContent = `${mm} ${dateWeek}, ${yyyy}`;
+};
+
 const displayWeather = (weather) => {
   const textTemp = document.querySelector('#text-temp');
   textTemp.textContent = weather.weather[0].description;
@@ -146,6 +168,7 @@ const displayWeather = (weather) => {
   degree.textContent = 'C';
   changeBackground(weather.weather[0].main);
   changeIcon(weather.weather[0].main);
+  displayDate();
 };
 
 export default displayWeather;

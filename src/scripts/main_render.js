@@ -50,17 +50,10 @@ const main = () => {
   });
 
   const iconTemp = document.createElement('div');
-  iconTemp.className = 'icon rainy';
+  iconTemp.className = 'pb-2';
   setAttributes(iconTemp, {
     id: 'weather',
   });
-
-  const iconCloud = document.createElement('div');
-  iconCloud.className = 'cloud';
-  const iconRain = document.createElement('div');
-  iconRain.className = 'rain';
-
-  iconTemp.append(iconCloud, iconRain);
 
   showTemp.append(textTemp, iconTemp);
 

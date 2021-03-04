@@ -18,7 +18,7 @@ const homePage = () => {
 
 homePage();
 
-const defaultCountry = 'Moscow';
+const defaultCountry = 'Goma';
 function getWeather(query) {
   fetch(`${weatherApi.base}weather?q=${query}&units=metric&APPID=${weatherApi.key}`)
     .then(weather => weather.json()).then(displayWeather);
