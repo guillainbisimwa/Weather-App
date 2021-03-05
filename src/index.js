@@ -28,11 +28,10 @@ const getWeather = (query) => {
 getWeather(defaultCountry);
 const check = document.querySelector('#tempSwitch');
 
-// eslint-disable-next-line func-names
-check.addEventListener('change', function () {
+check.addEventListener('change', () => {
   const degree = document.querySelector('#degree');
   const degreeNbr = document.querySelector('#degree-nbr');
-  if (this.checked) {
+  if (check.checked) {
     degreeNbr.textContent = tempConverted(parseInt(degreeNbr.textContent, 10), 'F');
     degree.textContent = '°F';
   } else {

@@ -166,6 +166,8 @@ const displayDetails = (weather) => {
 };
 
 const displayWeather = (weather) => {
+  document.getElementById('tempSwitch').checked = false;
+
   const textTemp = document.querySelector('#text-temp');
   textTemp.textContent = weather.weather[0].description;
 
